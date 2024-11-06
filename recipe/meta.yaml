@@ -1,4 +1,4 @@
-{% set build = 0 %}
+{% set build = 1 %}
 {% set commit = "6235e6907526d468e2c35f14c38db1e308698bc9" %}
 
 package:
@@ -16,6 +16,7 @@ build:
 requirements:
   build:
     - '{{ compiler("cxx") }}'
+    - {{ stdlib("c") }}
     - meson
     - bison
     - flex
