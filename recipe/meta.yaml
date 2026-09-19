@@ -1,10 +1,11 @@
 {% set build = 0 %}
+{% set version = "0.0.1.dev0" %}
 {% set commit = "073de0045c4a1b986081fc4164c290d7de510c85" %}
 {% set sha = "594241ecd8e48f8d52f96875fd2c5a80dca7899148f4e772fd45b6ab99d6056e" %}
 
 package:
   name: dynare-preprocessor
-  version: 0.0.0.dev{{ build }}.{{ commit }}
+  version: {{ version }}
 
 source:
   url: https://github.com/EconForge/dynare_preprocessor_pylib/archive/{{ commit }}.tar.gz
