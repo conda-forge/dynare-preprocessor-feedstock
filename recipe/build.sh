@@ -19,7 +19,7 @@ meson setup build_preproc \
   -Dbuild_cli=enabled \
   -Dbuild_library=disabled \
   -Dbuild_doc=false \
-  -Dcpp_link_args='-pthread'
+  -Dcpp_link_args="-pthread -L$PREFIX/lib -Wl,-rpath,$PREFIX/lib"
 
 meson compile -C build_preproc
 meson install -C build_preproc

@@ -21,3 +21,4 @@ if errorlevel 1 exit 1
 
 meson install -C build_win
 if errorlevel 1 exit 1
+
