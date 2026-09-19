@@ -1,30 +1,31 @@
-{% set build = 3 %}
-{% set commit = "2ff50f5690885f98aa3753bee9814e6e7d850c72" %}
-{% set sha = "8290536152a6a8da8ca32aeaa3c040ca17c6429da4fe34fb2683a67f0648b245" %}
+{% set build = 0 %}
+{% set commit = "073de0045c4a1b986081fc4164c290d7de510c85" %}
+{% set sha = "594241ecd8e48f8d52f96875fd2c5a80dca7899148f4e772fd45b6ab99d6056e" %}
 
 package:
   name: dynare-preprocessor
   version: 0.0.0.dev{{ build }}.{{ commit }}
 
 source:
-  url: https://git.dynare.org/Dynare/preprocessor/-/archive/{{ commit }}/preprocessor.tar.gz
+  url: https://github.com/EconForge/dynare_preprocessor_pylib/archive/{{ commit }}.tar.gz
   sha256: {{ sha }}
 
 build:
   number: {{ build }}
-  skip: true  # [win or osx]
 
 requirements:
   build:
     - '{{ compiler("cxx") }}'
     - {{ stdlib("c") }}
     - meson
-    - bison
-    - flex
+    - ninja
+    - bison         # [unix]
+    - flex          # [unix]
+    - winflexbison  # [win]
     - pkg-config
   host:
     - libboost-headers
-    - pthread-stubs
+    - pthread-stubs  # [linux]
 
 test:
   files:
