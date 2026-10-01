@@ -10,12 +10,7 @@ if [ "$(uname)" == "Darwin" ]; then
   CXXFLAGS="${CXXFLAGS} -D_LIBCPP_DISABLE_AVAILABILITY"
 fi
 
-meson setup build_preproc \
-  --prefix=$PREFIX \
-  --bindir=$PREFIX/bin \
-  --libdir=$PREFIX/lib \
-  --includedir=$PREFIX/include \
-  --buildtype=release \
+meson setup ${MESON_ARGS} build_preproc \
   -Dbuild_cli=enabled \
   -Dbuild_library=disabled \
   -Dbuild_doc=false \
