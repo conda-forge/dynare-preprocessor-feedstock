@@ -17,4 +17,4 @@ docker_image:
 libboost_headers:
 - '1.90'
 target_platform:
-- linux-64
+- linux-aarch64
